@@ -71,32 +71,36 @@ html {
 }
 
 @media (max-width: 1000px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: rgba(35, 42, 56, 0.9);
-      position: absolute;
-      top: 70px;
-      right: 10px;
-      width: 60%;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      padding: 10px;
-      text-align: right;
-  }
-
-  .nav-links.show {
-      display: flex;
-  }
-
   .menu-toggle {
-      display: block;
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
   }
 
-  .navbar {
-      justify-content: space-between; 
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: rgba(35, 42, 56, 0.95);
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    text-align: right;
+    gap: 15px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 }
+
 
 
 .image img {
