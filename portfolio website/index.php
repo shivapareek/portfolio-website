@@ -390,7 +390,7 @@
             </div>
             </div>
         </section>
-        <section class="portfolio" id="portfolio">
+<!--         <section class="portfolio" id="portfolio">
             <div class="container">
                 <div class="portfolioitems" data-aos="fade-up">
                     <div class="portfolio-heading">
@@ -416,7 +416,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="contact" id="contact">
             <div class="container">
                 <div class="contact-unique" data-aos="fade-up">
@@ -559,57 +559,25 @@
         </script>
         <script src="script.js"></script>
         <script src="https://kit.fontawesome.com/a70cd2934e.js" crossorigin="anonymous"></script>
+       <script>
+  // Initialize EmailJS with your User ID
+  emailjs.init("mFSfC7DMYzE-g0li_"); // 🔁 Replace with your actual user ID from EmailJS
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_am4efql', 'template_w41ajzo', this)
+      .then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+      }, (error) => {
+        alert("Failed to send message. Please try again.");
+        console.log(error);
+      });
+  });
+</script>
 
         
 </body>
 
 </html>
-
-<?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-if(isset($_POST['send']))
-{
-$name = $_POST['name'];
-$email = $_POST['email'];
-$mob = $_POST['mobile1'];
-$message = $_POST['message'];
-
-//Load Composer's autoloader
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/Exception.php';
-require 'phpmailer/SMTP.php';
-
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-
-try {
-    //Server settings
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'pareekshiva2004@gmail.com';                     //SMTP username
-    $mail->Password   = 'fchbbeneozokygat';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-    //Recipients
-    $mail->setFrom('pareekshiva2004@gmail.com', 'Contact Form');
-    $mail->addAddress('samrateditz25@gmail.com', 'Shiva');     //Add a recipient
-
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Samrat Portfolio Contact Form Details';
-    $mail->Body    = "Sender Name - $name <br> Sender Email - $email <br> Sender Mobile No. - $mob <br> Sender Message - $message";
-
-
-    $mail->send();
-    echo "<script>alert('We Will back to you shortly!');</script>";
-} catch (Exception $e) {
-    echo "<script>alert('Message could not be sent.');</script>Mailer Error: {$mail->ErrorInfo}";
-}
-}
