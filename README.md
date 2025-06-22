@@ -2,7 +2,6 @@
 
 This is a clean and responsive **personal portfolio website** built using **HTML**, **CSS**, and **JavaScript**. It showcases my profile, projects, skills, and includes a contact form powered by **EmailJS**.
 
-🔗 **Live Demo**: [shivapareek.github.io/portfolio-website](https://shivapareek.github.io/portfolio-website)
 
 ---
 
