@@ -42,7 +42,7 @@ This is a clean and responsive **personal portfolio website** built using **HTML
 
 **Shiva Pareek**  
 🎓 B.Tech CSE | UEM Jaipur  
-📧 shivapareekwork@gmail.com  
+📧 pareekshiva2004@gmail.com  
 🌐 [Portfolio](https://shivapareek.github.io/portfolio-website)  
 🐙 [GitHub](https://github.com/shivapareek)
 
